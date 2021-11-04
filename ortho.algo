@@ -1,0 +1,58 @@
+PROCEDURE Dot_product( v,u :ARRAY_OF INTEGER, ps:INTEGER )
+VAR
+    i:INTEGER;
+    ps:=0;
+
+BEGIN
+    VAR t1:=v.length-1;
+    VAR t2:=u.length-1;
+    IF(t1=t2 ) THEN
+   FOR i FROM 0 TO t1 STEP 1  DO
+       ps=ps+(v[i]*u[i])
+   END_FOR
+
+
+    ELSE
+        write("v!=u")
+
+    END_IF
+END
+
+
+
+ALGORITHM Dot product
+
+VAR
+ ps:INTEGER,tab:ARRAY_OF array;
+ n:INTEGER;
+ i,j:INTEGER;
+
+BEGIN
+ write("donner le nbre de paire ")
+ read(n)
+ 
+ FOR i FROM 0 TO tab.length-1 STEP 1  DO
+     FOR j FROM i+1 TO tab.length-1 STEP 1  DO
+         Dot_product(tab[i],tab[j],ps);
+     END_FOR
+ END_FOR
+ IF (ps=0) THEN
+     write("v_|_u")
+ END_IF
+END
+
+FUNCTION Dot_product(v,u:ARRAY_OF INTEGER) : INTEGER
+VAR
+    ps:INTEGER;
+BEGIN
+     VAR t1:=v.length-1;
+     VAR t2:=u.length-1;
+    IF(t1=t2 ) THEN
+      FOR i FROM 0 TO t1 STEP 1  DO
+       ps=ps+(v[i]*u[i])
+      END_FOR
+    ELSE
+        write("v!=u")
+    END_IF
+    RETURN ps ;
+END
